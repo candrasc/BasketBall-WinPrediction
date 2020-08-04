@@ -4,10 +4,12 @@ We achieve a logloss of 0.6178 and an accuracy of 67%, which is better than the 
 
 ### Credits:
 Download the datasets here: https://www.kaggle.com/nathanlauga/nba-games
+
 Github Repo that was used to pull these datasets: https://github.com/Nathanlauga/nba-predictor
 
 ### Data:
 For this analysis we will primarily be using the games and game_details data frames. 
+
 Games: Has overall team statistics for each game
 - We will use this for some introductory data visulization
 
