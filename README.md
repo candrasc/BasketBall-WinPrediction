@@ -21,7 +21,7 @@ Game_details: This includes individual player stats for each player of each team
 ### Data Visualization:
 There is some unrelated visualization related to points/assists while teams are home and away... this is unrelated to the prediction model, but it was interesting to see so I have left it up for others. 
 
-The important visualization is the heatmaps. These show the relationships of certain statistics with a home team win. Keep in mind that these heatmaps show the significance of a win. This gives us a sense of what correlates to a win. Surprising findings include that only defensive rebounds are signficant for the home team winning. Offensive rebounds have no correlation. 
+The important visualization is the heatmaps. These show the relationships of certain statistics with a home team win. Surprising findings include that only defensive rebounds are signficant for the home team winning. Offensive rebounds have no correlation. 
 
 ### Data Prep
 Here we use a previous df where I grouped the indivudal stats by game_id to provide team stats for a game. 
