@@ -1,6 +1,6 @@
 ## Summary:
 The purpose of this project is to predict the outcome of an NBA game based on a rolling average of the home and away team's statistics.
-We achieve an accuracy of 67%, a logloss of 0.6178, and an AUC of 0.70, which is better than the top voted prediction notebook on this Kaggle dataset. 
+We achieve an accuracy of 67%, a logloss of 0.62, and an AUC of 0.70, which is better than the top voted prediction notebook on this Kaggle dataset. 
 
 ### Credits:
 Download the datasets here: https://www.kaggle.com/nathanlauga/nba-games
