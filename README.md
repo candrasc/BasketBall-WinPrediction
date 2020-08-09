@@ -21,14 +21,14 @@ Game_details: This includes individual player stats for each player of each team
 ### Data Visualization:
 There is some unrelated visualization related to points/assists while teams are home and away... this is unrelated to the prediction model, but it was interesting to see so I have left it up for others. 
 
-The important visualization is the heatmaps. These show the relationships of certain statistics with a home team win. Keep in mind that these heatmaps show the significance of a win. This gives us a sense of what correlates to a win. Surprising findings include that only defensive rebounds are signficant for the home team winning. Offensive rebounds have no correlation. 
+The important visualization is the heatmaps. These show the relationships of certain statistics with a home team win. Surprising findings include that only defensive rebounds are signficant for the home team winning. Offensive rebounds have no correlation. 
 
 ### Data Prep
 Here we use a previous df where I grouped the indivudal stats by game_id to provide team stats for a game. 
 
 Drop pesky null values for plus minus category. 
 
-We then apply a simple 5 game moving average across all stats. This required me to loop through the data frame by each team name so that we could apply the rolling average to only one team at a time as the df was chronoloigical so different teams were playing in each row. 
+We then apply a simple 5 game moving average across all stats. This required me to loop through the data frame by each team name so that we could apply the rolling average to only one team at a time as the df was chronoloigical so different teams were playing in each row. (eg If we just applied a rolling ave, then Toronto stats would have been combined with Atlanta Stats etc). 
 
 Finally, we create a home and away df from these stats and merge them together so we have home and away stats in the same row
 
@@ -42,12 +42,12 @@ Despite it's simplicity, logistic regression was the best. This is always nice a
 
 ### Tuning Hyperparameters
 
-I used GridSearchCV to tune the model for parameters: C, penalty, solver. These were selected for tuning based on recommendations online and looking at a number of kaggle competitions.
+I used GridSearchCV to tune the model for parameters: C, penalty, solver. These were selected for tuning based on recommendations online and looking at a number of kaggle competitions to see what was best practice. 
 
 ### Model Evaluations
 Accuracy: 0.6383978998069735, log loss: 0.6427307748117226
 
-I also have classification report and a confusion matrix in the notebook.
+I also have a classification report and a confusion matrix in the notebook.
 
 ### Improving Feature Signficance
 Here we improve our feature quality by applying an exponential moving average to give more weight to more recent games.
