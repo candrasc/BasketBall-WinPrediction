@@ -1,6 +1,6 @@
 ## Summary:
 The purpose of this project is to predict the outcome of an NBA game based on a rolling average of the home and away team's statistics.
-We achieve an accuracy of 67%, a logloss of 0.62, and an AUC of 0.70, which is better than the top voted prediction notebook on this Kaggle dataset. 
+We achieve an accuracy of 67%, a logloss of 0.61, and an AUC of 0.70, which is better than the top voted prediction notebook on this Kaggle dataset. 
 
 ### Credits:
 Download the datasets here: https://www.kaggle.com/nathanlauga/nba-games
@@ -45,12 +45,12 @@ Despite it's simplicity, logistic regression was the best. This is always nice a
 I used GridSearchCV to tune the model for parameters: C, penalty, solver. These were selected for tuning based on recommendations online and looking at a number of kaggle competitions to see what was best practice. 
 
 ### Model Evaluations
-Accuracy: 0.6383978998069735, log loss: 0.6427307748117226
+Accuracy: 0.64, AUC: 0.66 log loss: 0.64
 
 I also have a classification report and a confusion matrix in the notebook.
 
 ### Improving Feature Signficance
 Here we improve our feature quality by applying an exponential moving average to give more weight to more recent games.
 
-Accuracy: 0.6665410290621402, log loss: 0.6136994090513114
+Accuracy: 0.67, AUC: 0.70 log loss: 0.61
 
