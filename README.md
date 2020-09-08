@@ -1,6 +1,6 @@
 ## Summary:
 The purpose of this project is to predict the outcome of an NBA game based on a rolling average of the home and away team's statistics.
-We achieve an accuracy of 67%, a logloss of 0.61, and an AUC of 0.70, which is better than the top voted prediction notebook on this Kaggle dataset. 
+We achieve an accuracy of 67%, a logloss of 0.61, and an AUC of 0.70. 
 
 ### Credits:
 Download the datasets here: https://www.kaggle.com/nathanlauga/nba-games
@@ -19,14 +19,14 @@ Game_details: This includes individual player stats for each player of each team
 ## Project Info
 
 ### Data Visualization:
-There is some unrelated visualization related to points/assists while teams are home and away... this is unrelated to the prediction model, but it was interesting to see so I have left it up for others. 
+There is some visualization related to points/assists while teams are home and away... this is unrelated to the prediction model, but it was interesting to see so I have left it up for others. 
 
-The important visualization is the heatmaps. These show the relationships of certain statistics with a home team win. Surprising findings include that only defensive rebounds are signficant for the home team winning. Offensive rebounds have no correlation. 
+The important exploratory visualization is the heatmaps. These show the relationships of certain statistics with a home team win. Surprising findings include that only defensive rebounds are signficant for the home team winning. Offensive rebounds have no correlation. 
 
 ### Data Prep
 Here we use a previous df where I grouped the indivudal stats by game_id to provide team stats for a game. 
 
-Drop pesky null values for plus minus category. 
+Impute/Drop pesky null values for plus minus category. 
 
 We then apply a simple 5 game moving average across all stats. This required me to loop through the data frame by each team name so that we could apply the rolling average to only one team at a time as the df was chronoloigical so different teams were playing in each row. (eg If we just applied a rolling ave, then Toronto stats would have been combined with Atlanta Stats etc). 
 
