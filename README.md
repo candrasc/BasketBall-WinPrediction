@@ -1,6 +1,7 @@
 ## Summary:
-The purpose of this project is to predict the outcome of an NBA game using both a neural network vs a simple tuned logistic regression classifier, based on a rolling average of the home and away team's statistics.
-We achieve an accuracy of 67%, a logloss of 0.61, and an AUC of 0.70. 
+The purpose of this project is to predict the outcome of an NBA game using both a neural network vs a tuned logistic regression classifier, based on a rolling average of the home and away team's statistics.
+
+We achieve the best results with the neural network, returning an accuracy of 67% and an AUC of 0.71. 
 
 ### Credits:
 Download the datasets here: https://www.kaggle.com/nathanlauga/nba-games
@@ -53,5 +54,5 @@ Accuracy: 0.666, AUC: 0.694 log loss: 0.616
 Finally, we use a neural network without any feature selection as it is not required. I ran the neural net with 9 hidden layers, 10,000 epochs, batch size of 512.
 It returned a marginally better Accuracy and AUC.
 
-Accuracy: 0.70, AUC: 0.70
+Accuracy: 0.672, AUC: 0.708
 
