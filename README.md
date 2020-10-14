@@ -1,5 +1,5 @@
 ## Summary:
-The purpose of this project is to predict the outcome of an NBA game based on a rolling average of the home and away team's statistics.
+The purpose of this project is to predict the outcome of an NBA game using both a neural network vs a simple tuned logistic regression classifier, based on a rolling average of the home and away team's statistics.
 We achieve an accuracy of 67%, a logloss of 0.61, and an AUC of 0.70. 
 
 ### Credits:
