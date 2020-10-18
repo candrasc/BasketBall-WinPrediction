@@ -51,7 +51,7 @@ Here we improve our feature quality by applying an exponential moving average to
 Accuracy: 0.666, AUC: 0.694 log loss: 0.616
 
 ### Using a Neural Net
-Finally, we use a neural network without any feature selection as it is not required. I ran the neural net with 9 hidden layers, 10,000 epochs, batch size of 512.
+Finally, we use a neural network without any feature selection as it is not required. I ran the neural net with 8 hidden layers, 5,000 epochs, batch size of 512.
 It returned a marginally better Accuracy and AUC.
 
 Accuracy: 0.672, AUC: 0.708
