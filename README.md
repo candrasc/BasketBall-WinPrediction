@@ -51,7 +51,7 @@ Here we improve our feature quality by applying an exponential moving average to
 Accuracy: 0.666, AUC: 0.694 log loss: 0.616
 
 ### Using a Neural Net
-Finally, I use a neural network on the preprocessed data from our log reg classifier. I opted for simple Keras Sequential netowrk with 8 hidden layers; running 5,000 epochs with a batch size of 512.
+Finally, I use a neural network on the preprocessed data from our log reg classifier. I opted for simple Keras Sequential netowrk with 8 hidden layers; running 500 epochs with a batch size of 512.
 
 
 It returned a better Accuracy and AUC than the log reg classifier.
