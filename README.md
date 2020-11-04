@@ -1,7 +1,7 @@
 ## Summary:
-The purpose of this project is to predict the outcome of an NBA game using both a simple neural network vs a tuned logistic regression classifier, based on a rolling average of the home and away team's statistics.
+The purpose of this project is to predict the outcome of an NBA game using a vanilla neural network vs a logistic regression classifier, based on a rolling expontential average of the home and away team's statistics.
 
-We achieve the best results with the neural network, returning an accuracy of 67% and an AUC of 0.71. 
+I achieved the best results with the neural network, returning an accuracy of 67.8% and an AUC of 0.717 vs logistic regression which returned an accuracy of 66.6% and an AUC of 0.694
 
 ### Credits:
 Download the datasets here: https://www.kaggle.com/nathanlauga/nba-games
@@ -20,13 +20,13 @@ Game_details: This includes individual player stats for each player of each team
 ## Project Info
 
 ### Data Prep
-Here we use a previous df where I grouped the indivudal stats by game_id to provide team stats for a game. 
+Here we use a previous df where I aggregated the indivudal player stats by game_id to provide team stats for each game. 
 
 Impute/Drop pesky null values for plus minus category. 
 
-We then apply a simple 5 game moving average across all stats. This required me to loop through the data frame by each team name so that we could apply the rolling average to only one team at a time as the df was chronoloigical so different teams were playing in each row. (eg If we just applied a rolling ave, then Toronto stats would have been combined with Atlanta Stats etc). 
+We then apply a simple 5 game moving average across all stats. 
 
-Finally, we create a home and away df from these stats and merge them together so we have home and away stats in the same row
+Finally, we create a home and away df from these stats and merge them together so we have home and away stats in the same row.
 
 ### Feature Selection
 Using selectKBest and f_classif, we select the strongest features. Plus minus was clearly the strongest. 
@@ -41,7 +41,7 @@ Despite it's simplicity, logistic regression was the best. This is always nice a
 I used GridSearchCV to tune the model for parameters: C, penalty, solver. These were selected for tuning based on recommendations online and looking at a number of kaggle competitions to see what was best practice. 
 
 ### Model Evaluations
-Accuracy: 0.64, AUC: 0.66 log loss: 0.64
+Accuracy: 0.633, AUC: 0.66 log loss: 0.664
 
 I also have a classification report and a confusion matrix in the notebook.
 
@@ -50,8 +50,14 @@ Here we improve our feature quality by applying an exponential moving average to
 
 Accuracy: 0.666, AUC: 0.694 log loss: 0.616
 
-### Using a Neural Net
-Finally, I use a neural network on the preprocessed data from our log reg classifier. I opted for simple Keras Sequential netowrk with 8 hidden layers; running 500 epochs with a batch size of 512.
+### Improving Results with a Neural Net
+Finally, I use a neural network on the preprocessed data from our log reg classifier. 
+
+I opted for simple Keras Sequential netowrk with 8 hidden layers. 
+
+I then used the Keras sklearn wrapper in order to create an sklearn estimator from my model. This allowed me to you GridsearchCV to tune my neural net. I also made a custom sklearn scorer so that gridsearch would use AUC to evlaluate models, rather than accuracy.
+
+In the end our best parameters returned an accuracy of 67.8% and AUC of 71.7. A fairly significant improvement.
 
 
 It returned a better Accuracy and AUC than the log reg classifier.
