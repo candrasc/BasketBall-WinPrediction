@@ -1,5 +1,5 @@
 ## Summary:
-The purpose of this project is to predict the outcome of an NBA game using a vanilla neural network vs a logistic regression classifier, based on a rolling expontential average of the home and away team's statistics.
+The purpose of this project is to predict the outcome of NBA games using a vanilla neural network vs a logistic regression classifier. Both classifiers will use the same train and test data which I have transformed into an exponentially weighted average of home and away team stats.
 
 I achieved the best results with the neural network, returning an accuracy of 67.8% and an AUC of 0.717 vs logistic regression which returned an accuracy of 66.6% and an AUC of 0.694
 
@@ -20,7 +20,7 @@ Game_details: This includes individual player stats for each player of each team
 ## Project Info
 
 ### Data Prep
-Here we use a previous df where I aggregated the indivudal player stats by game_id to provide team stats for each game. 
+Here we use a df where I aggregated the indivudal player stats by game_id to provide team stats for each game. 
 
 Impute/Drop pesky null values for plus minus category. 
 
@@ -51,14 +51,13 @@ Here we improve our feature quality by applying an exponential moving average to
 Accuracy: 0.666, AUC: 0.694 log loss: 0.616
 
 ### Improving Results with a Neural Net
-Finally, I use a neural network on the preprocessed data from our log reg classifier. 
+Finally, I use a neural network on the preprocessed data from our log reg classifier notebook. 
 
-I opted for simple Keras Sequential netowrk with 8 hidden layers. 
+I opted for a simple Keras Sequential network with 8 hidden layers. 
 
-I then used the Keras sklearn wrapper in order to create an sklearn estimator from my model. This allowed me to you GridsearchCV to tune my neural net. I also made a custom sklearn scorer so that gridsearch would use AUC to evlaluate models, rather than accuracy.
+I then used the Keras sklearn wrapper in order to create an sklearn estimator from my model. This allows me to use sklearn's GridsearchCV to tune my neural net. I also made a custom sklearn scorer so that gridsearch would use AUC to evlaluate models, rather than accuracy.
 
 In the end our best parameters returned an accuracy of 67.8% and AUC of 71.7. A fairly significant improvement.
-
 
 It returned a better Accuracy and AUC than the log reg classifier.
 
