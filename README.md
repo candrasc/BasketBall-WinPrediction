@@ -57,8 +57,4 @@ I opted for a simple Keras Sequential network with 8 hidden layers.
 
 I then used the Keras sklearn wrapper in order to create an sklearn estimator from my model. This allows me to use sklearn's GridsearchCV to tune my neural net. I also made a custom sklearn scorer so that gridsearch would use AUC to evlaluate models, rather than accuracy.
 
-In the end our best parameters returned an accuracy of 67.8% and AUC of 71.7. A fairly significant improvement.
-
-It returned a better Accuracy and AUC than the log reg classifier.
-
-Accuracy: 0.672, AUC: 0.708
+In the end our best parameters returned an accuracy of 67.8% and AUC of 71.7. A fairly significant improvement from our tuned logistic regression model.
